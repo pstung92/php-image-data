@@ -14,7 +14,7 @@ class GPano implements IteratorAggregate
 
     public function usePanoramaViewer(bool $usePanoramaViewer)
     {
-        return $this->setAttribute('UsePanoramaViewer', $usePanoramaViewer);
+        return $this->setAttribute('UsePanoramaViewer', $usePanoramaViewer == false ? 'False' : 'True');
     }
 
     public function captureSoftware(string $captureSoftware)

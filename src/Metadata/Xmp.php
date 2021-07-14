@@ -382,18 +382,18 @@ class Xmp
      */
     private function getOrCreateRDFDescription($namespace)
     {
-        $desc = $this->getRDFDescription($namespace);
-
-        if ($desc) {
-            return $desc;
-        }
-
-        // try and find any rdf:Description, and add to that
-        $desc = $this->xpath->query('//rdf:Description')->item(0);
-
-        if ($desc) {
-            return $desc;
-        }
+//        $desc = $this->getRDFDescription($namespace);
+//
+//        if ($desc) {
+//            return $desc;
+//        }
+//
+//        // try and find any rdf:Description, and add to that
+//        $desc = $this->xpath->query('//rdf:Description')->item(0);
+//
+//        if ($desc) {
+//            return $desc;
+//        }
 
         // no rdf:Description's, create new
         $prefix = array_search($namespace, $this->namespaces);
@@ -414,6 +414,13 @@ class Xmp
         return $desc;
     }
 
+    private function createGPanoAttribute($key, $value)
+    {
+        $namespace = 'http://ns.google.com/photos/1.0/panorama/';
+        $pano = $this->dom->createElementNS($namespace, 'GPano:'.$key, $value);
+
+        return $pano;
+    }
     /**
      * @param $field
      * @param $value
