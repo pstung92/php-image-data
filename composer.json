@@ -1,5 +1,5 @@
 {
-    "name": "hoangnm-0607/image-metadata-gpano-tag",
+    "name": "php-image-metadata/gpano-tag",
     "license": "MIT",
     "description": "The image metadata Library. Support panorama image.",
     "keywords": ["Image", "Photo", "Metadata", "XMP", "IPTC", "Exif"],
